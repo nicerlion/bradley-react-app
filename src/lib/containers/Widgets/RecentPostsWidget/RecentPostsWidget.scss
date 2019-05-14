@@ -1,0 +1,12 @@
+.recentPost {
+  .title {
+    margin-bottom: 7px;
+    font-weight: bold;
+  }
+
+  &:last-child {
+    .postMeta {
+      margin-bottom: 0px;
+    }
+  }
+}

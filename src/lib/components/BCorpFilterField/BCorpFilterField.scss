@@ -1,0 +1,276 @@
+@import '../../../scss/partials/variables';
+@import '../../../scss/partials/helpers';
+@import '../../../scss/partials/text-styles';
+@import '../../../scss/partials/mixins';
+
+$borderThickness: 1px;
+$borderRadius: 6px;
+$tabletGapBetweenFilters: 24px;
+
+%inputStyle {
+  @extend %body;
+  @extend %removeBrowserAppearance;
+  width: 100%;
+  border: solid $borderThickness $silver;
+  border-radius: $borderRadius;
+  padding: 7px;
+  background-color: #fff;
+  color: $steel-grey;
+  box-sizing: border-box;
+}
+
+%downArrow {
+  content: '';
+  position: absolute;
+  bottom: 36px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid $steel-grey;
+  transform: translateY(6px);
+}
+
+%upArrow {
+  content: '';
+  position: absolute;
+  bottom: 36px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 5px solid $steel-grey;
+  transform: translateY(-1px);
+}
+
+%required {
+  position: relative;
+
+  &::after {
+    @extend %post-meta-data;
+    position: absolute;
+    content: '*';
+    right: 10px;
+    bottom: 5px;
+    color: $red;
+    font-size: 18px;
+  }
+
+  &.lengthen {
+    &::after {
+      content: '*Required';
+    }
+  }
+}
+
+h5.title {
+  padding-bottom: 8px;
+  color: $navy;
+}
+
+.select {
+  position: relative;
+  padding-bottom: 20px;
+
+  @include respond-to(tablet) {
+    padding-left: ($tabletGapBetweenFilters / 2);
+    padding-right: ($tabletGapBetweenFilters / 2);
+    padding-bottom: 0px;
+  }
+
+  select {
+    @extend %inputStyle;
+    padding-right: 20px;
+    cursor: pointer;
+
+    // remove browser defaults
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    // remove dropdown arrow on IE
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  &::after {
+    @extend %downArrow;
+
+    @include respond-to(tablet) {
+      right: ($tabletGapBetweenFilters / 2) + 10px;
+      top: unset;
+      bottom: 16px;
+    }
+  }
+
+  // up arrow
+  &::before {
+    @extend %upArrow;
+
+    @include respond-to(tablet) {
+      right: ($tabletGapBetweenFilters / 2) + 10px;
+      top: unset;
+      bottom: 16px;
+    }
+  }
+
+  .required {
+    @extend %required;
+
+    &::after {
+      content: '*';
+    }
+  }
+}
+
+.search {
+  position: relative;
+
+  @include respond-to(tablet) {
+    padding-left: ($tabletGapBetweenFilters / 2);
+    padding-right: ($tabletGapBetweenFilters / 2);
+    padding-bottom: 0px;
+  }
+
+  input {
+    @extend %inputStyle;
+  }
+
+  .iconContainer {
+    position: absolute;
+    bottom: $borderThickness;
+    right: $borderThickness;
+    border-radius: 0px ($borderRadius - $borderThickness)
+      ($borderRadius - $borderThickness) 0px;
+    padding: 10px;
+    width: 32px;
+    height: 34px - 2 * $borderThickness;
+    background-color: $navy;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    @include respond-to(tablet) {
+      right: $borderThickness + ($tabletGapBetweenFilters / 2);
+    }
+
+    img {
+      float: left;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.number {
+  position: relative;
+  height: 23px;
+  width: 36px;
+
+  input {
+    @extend %inputStyle;
+    width: 100%;
+    padding: 2px 5px;
+    cursor: pointer;
+  }
+
+  b:nth-child(2) {
+    @extend %upArrow;
+    top: 7px;
+    right: 5px;
+  }
+
+  b:nth-child(3) {
+    @extend %downArrow;
+    top: 7px;
+    right: 5px;
+  }
+}
+
+.input {
+  width: 100%;
+
+  input,
+  textarea {
+    @extend %body;
+    @extend %removeBrowserAppearance;
+    border: 1px solid $silver;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $steel-grey;
+    }
+  }
+
+  &.required {
+    @extend %required;
+  }
+}
+
+.checkBoxTitle {
+  color: $navy;
+}
+
+.checkbox {
+  .checkboxOption {
+    position: relative;
+    margin-bottom: 6px;
+    display: flex;
+
+    input {
+      @extend %removeBrowserAppearance;
+      border: 1px $silver solid;
+      border-radius: 4px;
+      width: 12px;
+      height: 12px;
+      margin: 0;
+      margin-right: 9px;
+      cursor: pointer;
+
+      &:checked:before {
+        content: '';
+        background: $navy;
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        left: 3px;
+        top: 5px;
+        border-radius: 2px;
+      }
+    }
+
+    label.labelChecked {
+      color: $black;
+      font-weight: bold;
+
+      span {
+        font-weight: normal;
+      }
+    }
+  }
+
+  .other {
+    .checkboxOption {
+      margin-bottom: 18px;
+    }
+
+    .fill {
+      input {
+        background-color: $light-gray;
+        border: solid 1px $silver;
+      }
+    }
+  }
+
+  label {
+    @extend %body;
+    color: $navy;
+    line-height: normal;
+    cursor: pointer;
+  }
+}

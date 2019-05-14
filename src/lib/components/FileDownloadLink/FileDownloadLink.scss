@@ -1,0 +1,52 @@
+@import '../../../scss/partials/variables';
+
+$iconWidth: 13px;
+$iconMargin: 13px;
+
+li {
+  .container {
+    margin-bottom: 12px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &:last-child {
+    .container {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  padding-left: $iconWidth + $iconMargin;
+}
+
+div.link {
+  line-height: 17px;
+}
+
+.iconWrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  width: $iconWidth;
+  height: 17px;
+}
+
+.icon {
+  height: 100%;
+  width: auto;
+}
+
+.wrapChildren {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.noLink {
+  color: $slate-grey;
+}

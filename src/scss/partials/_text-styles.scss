@@ -1,0 +1,342 @@
+@font-face {
+  font-family: 'CentraleSansPro'; /*'CentraleSansProBold';*/
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_0_0.eot');
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_0_0.eot?#iefix')
+      format('embedded-opentype'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_0_0.woff2')
+      format('woff2'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_0_0.woff')
+      format('woff'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_0_0.ttf')
+      format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CentraleSansPro'; /*'CentraleSansProLight';*/
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_1_0.eot');
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_1_0.eot?#iefix')
+      format('embedded-opentype'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_1_0.woff2')
+      format('woff2'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_1_0.woff')
+      format('woff'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357BF9_1_0.ttf')
+      format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CentraleSansPro'; /*'CentraleSansProLight-It';*/
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_2_0.eot');
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_2_0.eot?#iefix')
+      format('embedded-opentype'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_2_0.woff2')
+      format('woff2'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_2_0.woff')
+      format('woff'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_2_0.ttf')
+      format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TradeGothic'; /*'TradeGothicLT-BoldCondTwenty';*/
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_0_0.eot');
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_0_0.eot?#iefix')
+      format('embedded-opentype'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_0_0.woff2')
+      format('woff2'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_0_0.woff')
+      format('woff'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_0_0.ttf')
+      format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CentraleSansPro'; /*'CentraleSansProBold-It';*/
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_1_0.eot');
+  src: url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_1_0.eot?#iefix')
+      format('embedded-opentype'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_1_0.woff2')
+      format('woff2'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_1_0.woff')
+      format('woff'),
+    url('http://site.bradleydev.twoxfour.com/assets/webfonts/357E43_1_0.ttf')
+      format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@import './mixins';
+@import './variables';
+
+/* Text styles */
+
+%h1-mobile {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $CentraleSansPro;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1.22;
+  letter-spacing: -0.9px;
+}
+
+%h1-tablet {
+  @extend %h1-mobile;
+  font-size: 28px;
+  line-height: 1.21;
+  letter-spacing: -1.1px;
+}
+
+%h1-desktop {
+  @extend %h1-tablet;
+  font-size: 34px;
+  line-height: 1.06;
+  letter-spacing: -1.4px;
+}
+
+%h2-mobile {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $TradeGothic-CondTwenty;
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  color: $black;
+}
+
+%h2-tablet {
+  @extend %h2-mobile;
+  font-size: 36px;
+  letter-spacing: 3.6px;
+}
+
+%h2-desktop {
+  @extend %h2-tablet;
+  font-size: 42px;
+  letter-spacing: 4.2px;
+}
+
+%h3-mobile {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $CentraleSansPro;
+  font-size: 16px;
+  font-weight: bold;
+  color: $navy;
+}
+
+%h3-tablet {
+  @extend %h3-mobile;
+  font-size: 20px;
+}
+
+%h3-desktop {
+  @extend %h3-tablet;
+  font-size: 24px;
+}
+
+%h4-tablet-mobile {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $TradeGothic-CondTwenty;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: $black;
+}
+
+%h4-desktop {
+  @extend %h4-tablet-mobile;
+  font-size: 18px;
+  line-height: 1.11;
+  letter-spacing: 1.8px;
+}
+
+%h5-desktop {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $CentraleSansPro;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+%h6-desktop {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $CentraleSansPro;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+%body {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: $slate-grey;
+}
+
+%small-body {
+  @extend %body;
+  font-size: 12px;
+  color: $steel-grey;
+}
+
+%post-meta-data {
+  @extend %body;
+  font-size: 12px;
+  font-style: oblique;
+  line-height: normal;
+  color: $slate-grey;
+}
+
+%post-tag {
+  font-family: Helvetica;
+  font-size: 10px;
+  color: $slate-grey;
+}
+
+%link-navy {
+  @extend %body;
+  line-height: normal;
+  color: $navy;
+}
+
+%link-orange {
+  font-family: $CentraleSansPro;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $orange;
+}
+
+%small-link-gray {
+  font-family: $CentraleSansPro;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+%hero-headline-mobile {
+  font-family: $TradeGothic-CondTwenty;
+  font-size: 46px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+%hero-headline-tablet {
+  @extend %hero-headline-mobile;
+  font-size: 72px;
+  letter-spacing: 7.2px;
+}
+
+%hero-headline-desktop {
+  @extend %hero-headline-tablet;
+  font-size: 90px;
+  letter-spacing: 9px;
+}
+
+%hero-intro-mobile {
+  font-family: $CentraleSansPro;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.31;
+  letter-spacing: 3.2px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+%hero-intro-tablet {
+  @extend %hero-intro-mobile;
+  font-size: 20px;
+  line-height: 1.36;
+  letter-spacing: 3.9px;
+}
+
+%hero-intro-desktop {
+  @extend %hero-intro-tablet;
+  font-size: 24px;
+  line-height: 1.33;
+  letter-spacing: 4.8px;
+}
+
+%hero-copy-mobile {
+  font-family: $CentraleSansPro;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+%hero-copy-tablet {
+  @extend %hero-copy-mobile;
+  font-size: 13px;
+  line-height: 1.38;
+}
+
+%hero-copy-desktop {
+  @extend %hero-copy-tablet;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+%home-caption {
+  font-family: $CentraleSansPro;
+  font-size: 11px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 4.4px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+%home-caption-tablet {
+  @extend %home-caption;
+  font-size: 13px;
+  letter-spacing: 5.2px;
+}
+
+%home-caption-desktop {
+  @extend %home-caption;
+  font-size: 16px;
+  letter-spacing: 6.4px;
+}
+
+%legal {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $CentraleSansPro;
+  font-size: 8px;
+  font-weight: bold;
+}

@@ -1,0 +1,65 @@
+@import '../../../../../scss/partials/variables';
+@import '../../../../../scss/partials/buttons';
+
+$parentTitleMarginBottom: 7px;
+$iconHeight: 20px;
+
+.title {
+  position: relative;
+  min-height: $iconHeight;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  a.blockDataTitle {
+    flex: 1;
+  }
+
+  &.noParent {
+    min-height: $parentTitleMarginBottom + $iconHeight;
+  }
+
+  h6.blockTitle {
+    // should be 10 but we have 3px extra space from the dont style
+    margin-bottom: $parentTitleMarginBottom;
+    color: $gray;
+
+    &.collapsible {
+      margin-right: 40px;
+    }
+  }
+
+  img.collapsibleIcon {
+    // position: absolute;
+    // top: -20px;
+    // right: -20px;
+    // padding: 20px;
+    padding: 0 5px 0 30px;
+    width: $iconHeight;
+    height: $iconHeight;
+    cursor: pointer;
+  }
+}
+
+.arrowWrapper {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.collapsible {
+  :global(.Collapsible__trigger) {
+    .collapsibleIcon:after {
+      @extend %button-cross-closed-pseudo;
+      padding: 0px 1px 3px;
+    }
+
+    &:global(.is-open) {
+      .collapsibleIcon:after {
+        @extend %button-cross-open-pseudo;
+      }
+    }
+  }
+}

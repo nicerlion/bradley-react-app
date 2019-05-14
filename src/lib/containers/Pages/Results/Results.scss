@@ -1,0 +1,242 @@
+@import '../../../../scss/partials/text-styles';
+@import '../../../../scss/partials/layout';
+@import '../../../../scss/partials/variables';
+@import '../../../../scss/partials/mixins';
+
+.resultsHeaderContainer {
+  margin-bottom: 5px;
+  padding-top: 40px;
+  padding-bottom: 0px;
+
+  @include respond-to(tablet) {
+    margin-bottom: 10px;
+    padding-top: 35px;
+  }
+
+  @include respond-to(desktop) {
+    padding-top: 60px;
+  }
+
+  h5 {
+    margin: 0;
+    color: $black;
+  }
+}
+
+:global(.default-template-title) {
+  margin-top: 0px;
+  margin-bottom: 20px;
+
+  @include respond-to(tablet) {
+    margin-bottom: 30px;
+  }
+
+  @include respond-to(desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.itemsWrapper {
+  background: transparent;
+  clear: both;
+}
+
+.mobileSelectWtapper {
+  margin-bottom: 30px;
+  padding: 20px 22px;
+  min-height: 30px;
+  background-color: #2e3c6e;
+}
+
+.resultsOptionsWrapper {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 0 40px;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    border: 1px solid $silver;
+    padding: 0 15px;
+    width: 200px;
+    height: 60px;
+    list-style-type: none;
+    background-color: $light-gray;
+    box-sizing: border-box;
+
+    h6 {
+      color: $steel-grey;
+      line-height: 60px;
+      text-align: center;
+    }
+
+    &.selected,
+    &:hover {
+      background: $navy;
+
+      h6 {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.contentWrapper {
+  @extend %BodyPaddingWithMediaQueries;
+  max-width: none;
+  min-height: 350px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.resultsTextContentWrapper {
+  @include respond-to(mobile) {
+    width: 100%;
+    margin: 0 0 30px;
+  }
+
+  @include respond-to(desktop) {
+    width: 61%;
+    margin: 0 auto;
+  }
+}
+
+/*
+  NEWS
+ */
+
+.newsList {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+
+    @include respond-to(mobile) {
+      padding: 26px 22px;
+    }
+
+    @include respond-to(tablet) {
+      padding: 35px 40px;
+    }
+
+    &:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    &:nth-child(even) {
+      background-color: $light-gray;
+    }
+
+    h5 {
+      color: $black;
+    }
+
+    p {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+/*
+  TECH INFO
+ */
+
+.searchTechInfoWrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.techInfoItem {
+  display: block;
+  margin-bottom: 12px;
+  padding-right: 15px;
+}
+
+.tabTextOrangeLink {
+  display: block;
+  padding-left: 26px;
+  position: relative;
+  .wordPDFIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.tabTextOrange {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: inherit;
+}
+
+.wordPDFIcon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 13px;
+  width: 13px;
+  height: 17px;
+}
+
+.resultsDate {
+  span {
+    font-family: 'Helvetica';
+    color: #58595b;
+    font-style: italic;
+    font-size: 12px;
+    line-height: normal;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
+
+button.loadMore {
+  @include respond-to(tablet) {
+    padding: 2px 30px;
+    width: auto;
+  }
+}
+
+.searchProductsWrapper {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  LITERATURE
+ */
+
+.searchLiteratureWrapper {
+  article {
+    margin-bottom: 30px;
+
+    .literatureTitle {
+      margin-top: 10px;
+      text-align: center;
+      text-transform: none;
+      color: $black;
+    }
+  }
+}
+
+/*
+  LOAD MORE
+ */
+
+.searchLoadMore {
+  @include respond-to(mobile) {
+    width: 88%;
+    margin: 0 auto;
+    display: block;
+  }
+  @include respond-to(tablet) {
+    width: 144px;
+    margin: 50px auto 0;
+    display: block;
+  }
+}

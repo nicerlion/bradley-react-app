@@ -1,0 +1,89 @@
+@import './variables';
+
+%button {
+  border: none;
+  width: 100%;
+  height: $buttonHeight;
+  background-color: $green;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: $CentraleSansPro;
+  font-size: 13px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  line-height: 42px;
+  outline: none;
+  text-transform: uppercase;
+}
+
+%button-orange {
+  @extend %button;
+  background-color: $orange;
+}
+
+%button-brown {
+  @extend %button;
+  background-color: $brown;
+}
+
+%button-border-slate-grey {
+  @extend %button;
+  border: solid 1px $slate-grey;
+  background-color: transparent;
+  color: $slate-grey;
+}
+
+%button-border-steel-grey {
+  @extend %button;
+  border: solid 1px $steel-grey;
+  background-color: transparent;
+  color: $steel-grey;
+}
+
+%button-border-dark-gray {
+  @extend %button;
+  border: solid 1px $dark-gray;
+  background-color: transparent;
+  color: $dark-gray;
+}
+
+%button-border-red {
+  @extend %button;
+  border: solid 1px #e51616;
+  background-color: transparent;
+  color: #e51616;
+}
+
+%button-cross-closed-pseudo {
+  content: '+';
+  float: right;
+  margin-top: -3px;
+  margin-left: 5px;
+  padding: 2px 1px 0px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 23px;
+  color: #fff;
+  background: $gray;
+  text-align: center;
+}
+
+%button-cross-open-pseudo {
+  content: '-' !important;
+  padding: 1px 1px 2px !important;
+}
+
+%add-button-cross-closed-pseudo {
+  &:after {
+    @extend %button-cross-closed-pseudo;
+  }
+
+  &:global(.is-open) {
+    &:after {
+      @extend %button-cross-open-pseudo;
+    }
+  }
+}

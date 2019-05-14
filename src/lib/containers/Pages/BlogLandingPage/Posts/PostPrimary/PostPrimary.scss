@@ -1,0 +1,58 @@
+@import '../../../../../../scss/partials/mixins';
+
+.postPrimary {
+  h2.title {
+    margin-bottom: 8px;
+  }
+
+  .meta {
+    margin-bottom: 17px;
+
+    @include respond-to(tablet) {
+      margin-bottom: 27px;
+    }
+  }
+
+  .imageContainer {
+    @include respond-to(tablet) {
+      padding-right: 12px;
+    }
+
+    @include respond-to(desktop) {
+      padding-right: 15px;
+    }
+
+    .image {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+  }
+
+  .contentContainer {
+    @include respond-to(tablet) {
+      padding-left: 12px;
+    }
+
+    @include respond-to(desktop) {
+      padding-right: 15px;
+    }
+
+    .content {
+      margin-bottom: 30px;
+    }
+
+    button.button {
+      margin-bottom: 30px;
+
+      @include respond-to(tablet) {
+        padding-left: 25px;
+        padding-right: 25px;
+        width: auto;
+      }
+    }
+  }
+
+  .postTags {
+    margin-bottom: 20px;
+  }
+}

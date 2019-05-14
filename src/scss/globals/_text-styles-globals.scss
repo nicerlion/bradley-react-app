@@ -1,0 +1,221 @@
+@import '../partials/text-styles';
+@import '../partials/mixins';
+// NOTE: styles wrt container size imported at the end
+
+h1 {
+  @extend %h1-mobile;
+
+  @include respond-to(tablet) {
+    font-size: 28px;
+    line-height: 1.21;
+    letter-spacing: -1.1px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 34px;
+    line-height: 1.06;
+    letter-spacing: -1.4px;
+  }
+}
+
+h2 {
+  @extend %h2-mobile;
+
+  @include respond-to(tablet) {
+    font-size: 36px;
+    letter-spacing: 3.6px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 42px;
+    letter-spacing: 4.2px;
+  }
+}
+
+h3 {
+  @extend %h3-mobile;
+
+  @include respond-to(tablet) {
+    font-size: 20px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 24px;
+    color: $navy;
+  }
+}
+
+h4 {
+  @extend %h4-tablet-mobile;
+
+  @include respond-to(desktop) {
+    font-size: 18px;
+    line-height: 1.11;
+    letter-spacing: 1.8px;
+  }
+}
+
+h5 {
+  @extend %h5-desktop;
+}
+
+h6 {
+  @extend %h6-desktop;
+}
+
+a {
+  @extend %link-navy;
+}
+
+body {
+  @extend %body;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead,
+tfoot {
+  border-top: 1px solid $silver;
+  border-bottom: 1px solid $silver;
+}
+
+th {
+  @extend %h5-desktop;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 1px solid $silver;
+  border-bottom: 1px solid $silver;
+}
+
+th,
+td {
+  margin: 0px;
+  line-height: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 25px;
+  padding-left: 15px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+tr:nth-child(2n) {
+  background-color: $light-gray;
+}
+
+tr td:first-child {
+  font-weight: bold;
+}
+
+:global .small-body :local {
+  @extend %small-body;
+}
+
+:global .post-meta-data :local {
+  @extend %post-meta-data;
+}
+
+:global .post-tag :local {
+  @extend %post-tag;
+}
+
+:global .link-navy :local {
+  @extend %link-navy;
+}
+
+:global .link-orange :local {
+  @extend %link-orange;
+}
+
+:global .link-orange-with-arrow :local {
+  @extend %link-orange;
+  display: inline-block;
+  padding-left: 16px;
+  background-image: url('../../../images/small-arrow/small-arrow@2x.png');
+  background-position: left 2px;
+  background-size: 6px 9px;
+  background-repeat: no-repeat;
+}
+
+:global .link-pdf :local {
+  @extend %link-orange;
+  display: inline-block;
+  padding-left: 16px;
+  background-image: url('../../../images/pdf-icon/pdf@2x.png');
+  background-position: left 2px;
+  background-size: 13px 18px;
+  background-repeat: no-repeat;
+  line-height: 20px;
+  padding-top: 4px;
+}
+
+:global .small-link-gray :local {
+  @extend %small-link-gray;
+}
+
+:global(.hero-headline) {
+  @extend %hero-headline-mobile;
+
+  @include respond-to(tablet) {
+    font-size: 72px;
+    letter-spacing: 7.2px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 90px;
+    letter-spacing: 9px;
+  }
+}
+
+:global(.hero-intro) {
+  @extend %hero-intro-mobile;
+
+  @include respond-to(tablet) {
+    font-size: 20px;
+    line-height: 1.36;
+    letter-spacing: 3.9px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: 4.8px;
+  }
+}
+
+:global(.hero-copy) {
+  @extend %hero-copy-mobile;
+
+  @include respond-to(tablet) {
+    font-size: 13px;
+    line-height: 1.38;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+:global(.home-caption) {
+  @extend %home-caption;
+
+  @include respond-to(tablet) {
+    font-size: 13px;
+    letter-spacing: 5.2px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 16px;
+    letter-spacing: 6.4px;
+  }
+}
+
+:global .legal :local {
+  @extend %legal;
+}
+
+// import at the end to give styles wrt container priority
+@import './text-styles-wrt-container-globals';

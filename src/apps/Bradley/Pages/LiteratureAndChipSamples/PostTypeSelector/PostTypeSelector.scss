@@ -1,0 +1,46 @@
+@import '../../../../../scss/partials/variables';
+@import '../../../../../scss/partials/mixins';
+
+.postTypeSelector {
+  margin-bottom: 30px;
+  text-align: center;
+
+  @include respond-to(tablet) {
+    margin-bottom: 45px;
+  }
+
+  @include respond-to(desktop) {
+    margin-bottom: 60px;
+  }
+
+  .postTypeSelectButton {
+    border: solid 1px $silver;
+    height: 60px;
+    background-color: $light-gray;
+
+    @include respond-to(tablet) {
+      display: inline-block;
+      max-width: 200px;
+      float: none;
+    }
+
+    h6 {
+      line-height: 60px;
+      color: $steel-grey;
+      text-align: center;
+    }
+
+    &.active {
+      border: solid 1px $silver;
+      background-color: $navy;
+
+      h6 {
+        color: white;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

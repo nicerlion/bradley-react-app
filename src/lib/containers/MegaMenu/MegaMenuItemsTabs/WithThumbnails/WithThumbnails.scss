@@ -1,0 +1,40 @@
+@import '../MegaMenuItemsTabs';
+
+.withoutThumbnails {
+  .thumbnailsWrapper {
+    @extend %fillActiveContent;
+    padding-top: $activeContentTopPadding;
+    padding-left: $MobileBodyPadding;
+    padding-right: $MobileBodyPadding;
+
+    @include respond-to(tablet) {
+      padding-left: $TabletBodyPadding;
+      padding-right: $activeContentRightPaddingTablet;
+    }
+
+    .column {
+      &:nth-child(1) {
+        padding-right: 10px;
+      }
+
+      &:nth-child(2) {
+        padding-left: 10px;
+      }
+
+      @include respond-to(tablet) {
+        &:nth-child(1) {
+          padding-right: 7px;
+        }
+
+        &:nth-child(2) {
+          padding-left: 7px;
+        }
+      }
+    }
+  }
+
+  .featuredPostWrapper {
+    padding-top: 20px;
+    padding-bottom: 40px - $activeContentTopPadding;
+  }
+}

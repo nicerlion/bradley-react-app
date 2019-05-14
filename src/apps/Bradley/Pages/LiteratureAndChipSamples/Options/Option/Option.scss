@@ -1,0 +1,132 @@
+@import '../../../../../../scss/partials/variables';
+@import '../../../../../../scss/partials/mixins';
+
+.option {
+  position: relative;
+  margin-bottom: 10px;
+  min-height: 30px !important;
+
+  @include respond-to(tablet) {
+    margin-bottom: 30px;
+    padding-right: 6%;
+    height: 100px;
+  }
+
+  @include respond-to(desktop) {
+    &:nth-child(2n) {
+      padding-right: 4%;
+    }
+  }
+
+  .imgContainer {
+    height: 100%;
+    .featuredImage {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // mobile content container
+  .contentContainer {
+    display: inline-block;
+    vertical-align: middle;
+
+    h5.title {
+      margin-left: 10px;
+      padding-right: 90px;
+      color: $black;
+
+      @include respond-to-max(tablet) {
+        font-size: 12px;
+      }
+    }
+
+    .addButton {
+      position: absolute;
+      top: 50%;
+      right: 40px;
+      transform: translateY(-15px);
+    }
+
+    .downloadIcon {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 19px;
+      height: 30px;
+      transform: translateY(-15px);
+    }
+  }
+
+  // tablet content container
+  .optionRow {
+    @include respond-to(tablet) {
+      height: 100%;
+    }
+
+    .contentContainer {
+      @include respond-to(tablet) {
+        display: block;
+        padding-top: 12px;
+        padding-bottom: 47px;
+        padding-left: 20px;
+        height: 100%;
+      }
+
+      .overflow {
+        @include respond-to(tablet) {
+          overflow-y: hidden;
+          height: 100%;
+        }
+
+        h5.title {
+          @include respond-to(tablet) {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            height: auto;
+            margin-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+
+      // groups buttons together for placing at bottom of option on tablet/desktop
+      .buttons {
+        @include respond-to(tablet) {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+        }
+
+        .downloadIcon {
+          @include respond-to(tablet) {
+            position: static;
+            float: left;
+            margin-left: 20px;
+            transform: translateY(6px);
+          }
+
+          @include respond-to(desktop) {
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.option.literature {
+}
+
+.option.chipSample {
+  .contentContainer {
+    h5.title {
+      padding-right: 50px;
+    }
+
+    .addButton {
+      right: 0px;
+    }
+  }
+}

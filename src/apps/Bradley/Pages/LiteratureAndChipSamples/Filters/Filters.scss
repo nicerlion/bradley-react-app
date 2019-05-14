@@ -1,0 +1,67 @@
+@import '../../../../../scss/partials/variables';
+@import '../../../../../scss/partials/text-styles';
+@import '../../../../../scss/partials/mixins';
+
+$tabletGapBetweenFilters: 24px;
+
+.filters {
+  margin: 0px -$MobileBodyPadding;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 20px $MobileBodyPadding;
+  background-color: $light-gray;
+
+  @include respond-to(tablet) {
+    margin: 0px - ($tabletGapBetweenFilters / 2);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  @include respond-to(tablet) {
+    margin-bottom: 60px;
+  }
+}
+
+.productLine {
+  padding-right: 10px;
+
+  @include respond-to(tablet) {
+    padding-right: ($tabletGapBetweenFilters / 2);
+  }
+}
+
+.language {
+  padding-left: 10px;
+
+  &::after,
+  &::before {
+    right: 10px;
+  }
+
+  @include respond-to(tablet) {
+    padding-left: ($tabletGapBetweenFilters / 2);
+
+    &::after,
+    &::before {
+      right: 20px;
+    }
+  }
+}
+
+.materialType {
+  padding-bottom: 0px;
+
+  &::before,
+  &::after {
+    bottom: 16px;
+  }
+
+  @include respond-to-max(tablet) {
+    &::before,
+    &::after {
+      right: 10px;
+    }
+  }
+}

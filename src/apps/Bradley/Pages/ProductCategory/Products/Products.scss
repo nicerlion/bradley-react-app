@@ -1,0 +1,32 @@
+@import '../../../../../scss/partials/mixins';
+
+.products {
+  margin-bottom: 20px;
+  min-height: 250px;
+
+  .product {
+    margin-bottom: 5px;
+
+    @include respond-to(tablet) {
+      margin-bottom: 25px;
+    }
+
+    @include respond-to(desktop) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @include respond-to(tablet) {
+    margin-bottom: 0px;
+  }
+
+  @include respond-to(desktop) {
+    margin-bottom: 35px;
+  }
+
+  .noResults {
+    @include respond-to(tablet) {
+      margin-bottom: 20px;
+    }
+  }
+}

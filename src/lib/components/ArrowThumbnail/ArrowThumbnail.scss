@@ -1,0 +1,24 @@
+$arrowWidth: 6px;
+$arrowMargin: 13px;
+
+.wrapper {
+  position: relative;
+  padding-left: $arrowWidth + $arrowMargin;
+}
+
+.arrowWrapper {
+  position: absolute;
+  top: 3.5px;
+  left: 0;
+}
+
+.wrapChildren {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.arrow {
+  display: block;
+  width: $arrowWidth;
+  height: 9px;
+}

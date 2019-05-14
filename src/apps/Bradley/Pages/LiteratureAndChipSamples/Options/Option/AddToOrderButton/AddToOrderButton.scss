@@ -1,0 +1,172 @@
+@import '../../../../../../../scss/partials/variables';
+@import '../../../../../../../scss/partials/mixins';
+@import '../../../../../../../scss/partials/buttons';
+
+$addButtonMobileWidth: 30px;
+
+.addButton {
+  position: relative;
+  width: $addButtonMobileWidth;
+  height: $addButtonMobileWidth;
+  background-color: $green;
+
+  .addButtonLines {
+    &:before {
+      position: absolute;
+      content: '';
+      top: 14px;
+      left: 7px;
+      width: 16px;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 7px;
+      left: 14px;
+      width: 2px;
+      height: 16px;
+      background-color: #fff;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.addButtonDesktop {
+  float: left;
+  width: auto;
+  padding: {
+    left: 17px;
+    right: 17px;
+  }
+
+  @include respond-to(desktop) {
+    // extend button-border-dark-gray
+    border: solid 1px $dark-gray;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+    color: $dark-gray;
+
+    &:hover {
+      // extend button
+      border: solid 1px #fff;
+      background-color: $green;
+      color: #ffffff;
+      width: auto;
+      padding: {
+        left: 17px;
+        right: 17px;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.shipmentOrDownloadMobileContainer {
+  position: absolute;
+  top: -14px;
+  right: $addButtonMobileWidth + 20px;
+  padding: 8px;
+  width: 162px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2.9px 0.1px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  border: solid 1px $silver;
+  box-sizing: border-box;
+  transition: opacity 0.2s;
+
+  .relativePosition {
+    position: relative;
+
+    .rightTriangle {
+      position: absolute;
+      top: 13px;
+      right: -15px;
+      display: block;
+      height: 14px;
+      transform: rotate(45deg);
+      width: 14px;
+      box-shadow: 2px -2px 2.9px 0px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+    }
+  }
+
+  &.added {
+    top: -6px;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+    height: 42px;
+
+    .rightTriangle {
+      right: -16px;
+    }
+
+    h5 {
+      line-height: 42px;
+      color: $navy;
+    }
+  }
+
+  &.hide {
+    opacity: 0;
+  }
+}
+
+.iconButton,
+.iconButton:global(.button-orange) {
+  float: left;
+  position: relative;
+  z-index: 2;
+  width: 70px;
+  height: 40px;
+
+  &.addToShipment {
+    margin-right: 4px;
+  }
+
+  .iconWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -42%);
+    width: auto;
+    line-height: normal;
+
+    .iconText {
+      margin-bottom: 2px;
+      font-size: 9px;
+      line-height: normal;
+    }
+
+    .shippingIcon {
+      width: 27px;
+      height: 19px;
+      line-height: normal;
+    }
+
+    .downloadIcon {
+      width: 19px;
+      height: 19px;
+      line-height: normal;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.relativePosition {
+  position: relative;
+}

@@ -1,0 +1,32 @@
+@import '../../../../../../../scss/partials/variables';
+@import '../../../../../../../scss/partials/mixins';
+
+.literatureWrapper {
+  margin-bottom: 20px;
+}
+
+.divider {
+  margin-bottom: 20px;
+}
+
+.chipSamplesWrapper {
+  margin-bottom: 30px;
+
+  @include respond-to(tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.legal:global(.legal) {
+  margin-bottom: 10px;
+  color: $steel-grey;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  a {
+    color: $navy;
+    text-decoration: underline;
+  }
+}

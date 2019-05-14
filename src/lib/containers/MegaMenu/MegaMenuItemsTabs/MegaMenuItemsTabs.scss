@@ -1,0 +1,48 @@
+@import '../../../../scss/partials/variables';
+@import '../../../../scss/partials/mixins';
+@import '../../../../scss/partials/text-styles';
+
+$tabHeight: 50px;
+$activeContentTopPadding: 20px;
+$activeContentRightPaddingTablet: 20px;
+
+.ul {
+  margin-top: 0;
+}
+
+.tab {
+  height: $tabHeight;
+  text-align: left;
+
+  h5:global(.tab-text) {
+    @extend %h6-desktop;
+    line-height: $tabHeight;
+    color: $slate-grey;
+  }
+
+  :global(.bcorp-tab-open-close-icon) {
+    line-height: $tabHeight;
+  }
+}
+
+.activeContent {
+  padding-top: $activeContentTopPadding;
+  padding-bottom: $activeContentTopPadding;
+
+  @include respond-to(tablet) {
+    padding-right: $activeContentRightPaddingTablet;
+  }
+}
+
+%fillActiveContent {
+  margin-top: -$activeContentTopPadding;
+  margin-left: -$MobileBodyPadding;
+  margin-right: -$MobileBodyPadding;
+  background-color: #fff;
+
+  @include respond-to(tablet) {
+    margin-left: -$TabletBodyPadding;
+    margin-right: -$activeContentRightPaddingTablet;
+    background-color: #fff;
+  }
+}

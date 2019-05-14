@@ -1,0 +1,74 @@
+@import "./globals/grid-globals";
+@import "./globals/text-styles-globals";
+@import "./globals/buttons-globals";
+@import "./globals/hamburgers/hamburgers";
+@import "./partials/mixins";
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+
+  &:global(.prevent-scroll) {
+    overflow: hidden;
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+:global .noSelectBackground {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+
+}
+
+/* IE fix */
+img {
+	border: 0;
+}
+
+// ensure all wordpress inserted images are responsive
+img[class*="wp-image-"] {
+  max-width: 100%;
+  height: auto;
+
+  :global &.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    &.hide-on-mobile {
+      display: none;
+      @include respond-to(tablet) {
+        display: block;
+      }
+    }
+  }
+
+  :global &.alignleft {
+    float:left;
+    margin:0 1em 1em 0;
+  }
+
+  :global &.alignright {
+    float:right;
+    margin:0 0 1em 1em;
+  }
+}
+
+// Misc classes
+// as per brad: add a class to hide things on mobile.
+:global .hide-on-mobile {
+  display: none;
+  @include respond-to(tablet) {
+    display: inline-block;
+  }
+}

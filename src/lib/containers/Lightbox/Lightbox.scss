@@ -1,0 +1,30 @@
+@import '../../../scss/partials/helpers';
+@import '../../../scss/partials/mixins';
+
+$closeButtonHeight: 32px;
+$closeButtonDistanceBelow: 40px;
+$lightboxWidth: 85; // percentage
+$lightboxWidthTabletDesktop: 62; // percentage
+$lightboxHeight: 85; // percentage
+$lightboxHeightPerc: $lightboxHeight + %;
+
+.closeButtonWrapper {
+  position: absolute;
+  bottom: -($closeButtonHeight + $closeButtonDistanceBelow);
+  width: 100%;
+
+  .closeButton {
+    margin: 0 auto;
+    width: $closeButtonHeight;
+    height: $closeButtonHeight;
+    cursor: pointer;
+  }
+}
+
+:export {
+  lightboxheight: $lightboxHeight;
+  lightboxwidth: $lightboxWidth;
+  lightboxwidthtabletdesktop: $lightboxWidthTabletDesktop;
+  lightboxclosebuttonheight: $closeButtonHeight;
+  lightboxclosebuttondistancebelow: $closeButtonDistanceBelow;
+}

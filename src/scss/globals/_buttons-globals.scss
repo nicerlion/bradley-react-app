@@ -1,0 +1,31 @@
+@import '../partials/buttons';
+
+// buttons
+
+:global button :local {
+  @extend %button;
+}
+
+:global .button-orange :local {
+  @extend %button-orange;
+}
+
+:global .button-brown :local {
+  @extend %button-brown;
+}
+
+:global .button-border-slate-grey :local {
+  @extend %button-border-slate-grey;
+}
+
+:global .button-border-steel-grey :local {
+  @extend %button-border-steel-grey;
+}
+
+:global .button-border-dark-gray :local {
+  @extend %button-border-dark-gray;
+}
+
+:global .button-border-red :local {
+  @extend %button-border-red;
+}

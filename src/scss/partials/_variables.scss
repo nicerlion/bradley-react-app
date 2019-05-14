@@ -1,0 +1,72 @@
+/* Color palette */
+/* prettier-ignore */
+
+$green: #91c53b;
+$navy: #2f3d6f;
+$black: #000000;
+$red: #e23e2f;
+$orange: #e9872b;
+$light-gray: #f1f2f2;
+$gray: #a7a9ac;
+$dark-gray: #6d6d6d;
+$silver: #d1d3d4;
+$slate-grey: #58595b;
+$steel-grey: #808285;
+$charcoal-grey: #414042;
+$thumbnail-border: #cecece;
+$brown: #a7917e;
+
+/* Global Sizes */
+/* prettier-ignore */
+
+$buttonHeight: 42px;
+
+/* Fonts */
+/* prettier-ignore */
+
+$CentraleSansPro: 'CentraleSansPro';
+$TradeGothic: 'TradeGothic';
+$TradeGothic-CondTwenty: 'TradeGothic'; // for now until we get the font
+
+/* Padding */
+/* prettier-ignore */
+
+$MobileBodyPadding: 25px;
+$TabletBodyPadding: 40px;
+$DesktopBodyPadding: 55px;
+
+/* Breakpoints */
+/* prettier-ignore */
+/* Note: these values are exported and used globally throughout the js too, so changing here will change for everything */
+
+$MobileWidth: 319;
+$MobileWidthPX: $MobileWidth + px;
+
+$MobileMaxWidth: 767;
+$MobileMaxWidthPX: $MobileMaxWidth + px;
+
+$TabletMaxWidth: 1023;
+$TabletMaxWidthPX: $TabletMaxWidth + px;
+
+/* prettier-ignore */
+
+:export {
+  MobileMaxWidth: $MobileMaxWidth;
+  TabletMaxWidth: $TabletMaxWidth;
+  MobileBodyPadding: $MobileBodyPadding;
+  TabletBodyPadding: $TabletBodyPadding;
+  DesktopBodyPadding: $DesktopBodyPadding;
+  Green: $green;
+  Navy: $navy;
+  Black: $black;
+  Red: $red;
+  Orange: $orange;
+  LightGray: $light-gray;
+  Gray: $gray;
+  DarkGray: $dark-gray;
+  Silver: $silver;
+  SlateGrey: $slate-grey;
+  SteelGrey: $steel-grey;
+  CharcoalGrey: $charcoal-grey;
+  Brown: $brown;
+}

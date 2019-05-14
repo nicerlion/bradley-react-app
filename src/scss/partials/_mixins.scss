@@ -1,0 +1,33 @@
+@import "./variables";
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (min-width: $MobileWidth + 1 + px) { @content; }
+  }
+  @elseif $media == tablet {
+    @media only screen and (min-width: $MobileMaxWidth + 1 + px) { @content; }
+  }
+  @elseif $media == desktop {
+    @media only screen and (min-width: $TabletMaxWidth + 1 + px) { @content; }
+  }
+}
+
+@mixin respond-to-max($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $MobileWidthPX) { @content; }
+  }
+  @elseif $media == tablet {
+    @media only screen and (max-width: $MobileMaxWidthPX) { @content; }
+  }
+  @elseif $media == desktop {
+    @media only screen and (max-width: $TabletMaxWidthPX) { @content; }
+  }
+}
+
+@mixin respond-to-custom($widthPX) {
+  @media only screen and (min-width: $widthPX) { @content; }
+}
+
+@mixin respond-to-max-custom($widthPX) {
+  @media only screen and (max-width: $widthPX) { @content; }
+}

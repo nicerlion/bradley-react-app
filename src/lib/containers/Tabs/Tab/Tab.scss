@@ -1,0 +1,72 @@
+@import '../../../../scss/partials/variables';
+@import '../../../../scss/partials/mixins';
+@import '../../../../scss/partials/layout';
+
+$tabHeight: 65px;
+$imageHeight: $tabHeight - 20px;
+
+.tab {
+  @extend %BodyPaddingWithMediaQueries;
+  border-bottom: 1px solid $silver;
+  height: $tabHeight;
+  list-style: none;
+  cursor: pointer;
+
+  &:first-child {
+    border-top: 1px solid $silver;
+  }
+
+  @include respond-to(tablet) {
+    h5.tabText {
+      font-size: 13px;
+    }
+  }
+
+  .image {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: $imageHeight;
+    width: $imageHeight;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  h5.tabText {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: calc(100% - 19px);
+    color: $navy;
+    line-height: $tabHeight;
+
+    &.hasImage {
+      max-width: calc(100% - 19px - #{$imageHeight} - 20px);
+    }
+  }
+
+  img.icon {
+    float: right;
+    width: 19px;
+    height: 11px;
+    margin: ($tabHeight - 11px)/2 0;
+  }
+
+  .openCloseIcon {
+    float: right;
+    font-size: 20px;
+    letter-spacing: -2px;
+    line-height: $tabHeight;
+    color: $gray;
+  }
+
+  &.active {
+    background-color: $navy;
+
+    h5.tabText {
+      color: #ffffff;
+    }
+  }
+}
